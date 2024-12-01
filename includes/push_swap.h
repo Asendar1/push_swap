@@ -6,33 +6,41 @@
 /*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:51:22 by hassende          #+#    #+#             */
-/*   Updated: 2024/11/28 21:20:50 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/01 17:43:17 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <stdbool.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <stdbool.h>
+# include <stdio.h>
 
 #include "libft.h"
 
-struct s_stack
+typedef struct s_stack
 {
 	int		value;
 	int		index;
 	int		push_cost;
 	bool	above_median;
 	bool	cheapest;
-	t_stack *target_node;
-	t_stack *next;
-	t_stack *prev;
+	struct s_stack *target_node;
+	struct s_stack *next;
+	struct s_stack *prev;
 
-} typedef t_stack;
+}		t_stack;
 
 void	exit_error(char *error);
+void	init_stack(t_stack **stack_a, char **args);
+void	stack_add_bottom(t_stack **stack, t_stack *node);
+void	free_stack(t_stack **stack);
+void	free_2d(char **arr);
+int		ft_atol(char *str);
+int		is_number(char *str);
+t_stack	*new_node(int value);
 
 #endif
