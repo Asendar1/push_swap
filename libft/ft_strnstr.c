@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:21:10 by hassende          #+#    #+#             */
-/*   Updated: 2024/08/28 15:37:43 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/01 17:59:14 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 				j++;
 			}
 			j = 0;
-		}	
+		}
 		i++;
 	}
 	return (NULL);

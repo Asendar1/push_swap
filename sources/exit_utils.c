@@ -6,7 +6,7 @@
 /*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:55:07 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/01 17:43:07 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/01 18:21:10 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	exit_error(char *error)
 
 void	free_stack(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!*stack)
 		return ;
 	while (*stack)
 	{
 		tmp = *stack;
-		*stack = (*stack) -> next;
+		*stack = (*stack)-> next;
 		free(tmp);
 	}
 }

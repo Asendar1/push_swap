@@ -6,7 +6,7 @@
 /*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:51:22 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/01 17:43:17 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/01 18:18:36 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 # include <stdbool.h>
 # include <stdio.h>
 
-#include "libft.h"
+# include "libft.h"
 
 typedef struct s_stack
 {
-	int		value;
-	int		index;
-	int		push_cost;
-	bool	above_median;
-	bool	cheapest;
-	struct s_stack *target_node;
-	struct s_stack *next;
-	struct s_stack *prev;
+	int				value;
+	int				index;
+	int				push_cost;
+	bool			above_median;
+	bool			cheapest;
+	struct s_stack	*target_node;
+	struct s_stack	*next;
+	struct s_stack	*prev;
 
 }		t_stack;
 

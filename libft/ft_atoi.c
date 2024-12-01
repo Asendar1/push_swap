@@ -6,7 +6,7 @@
 /*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:44:30 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/01 16:57:39 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/01 17:57:40 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long int	ft_atoi(const char *str)
 {
-	int	i;
-	int	neg;
+	int			i;
+	int			neg;
 	long int	res;
 
 	i = 0;

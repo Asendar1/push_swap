@@ -6,7 +6,7 @@
 /*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 16:39:09 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/01 17:55:55 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/01 18:26:07 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ t_stack	*new_node(int value)
 	t_stack	*node;
 
 	if (value == -1)
-		{
-			ft_putendl_fd("Error\nInteger overflow", 2);
-			return (NULL);
-		}
+	{
+		ft_putendl_fd("Error\nInteger overflow", 2);
+		return (NULL);
+	}
 	node = malloc(sizeof(t_stack));
 	if (!node)
 		exit_error("Error\nMalloc failed");
@@ -40,7 +40,10 @@ void	stack_add_bottom(t_stack **stack, t_stack *node)
 	t_stack	*last;
 
 	if (!node)
+	{
 		free_stack(stack);
+		return ;
+	}
 	if (!*stack)
 	{
 		*stack = node;
