@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:50:51 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/01 18:22:08 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/03 12:19:56 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int	main(int argc, char *argv[])
 		args = insert_args(argc, argv);
 	init_stack(&stack_a, args);
 	free_2d(args);
+	algrothim(&stack_a);
 	return (0);
 }

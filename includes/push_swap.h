@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:51:22 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/01 18:18:36 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/02 13:46:57 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ typedef struct s_stack
 	struct s_stack	*target_node;
 	struct s_stack	*next;
 	struct s_stack	*prev;
-
 }		t_stack;
 
 void	exit_error(char *error);

@@ -3,19 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:34:31 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/01 18:29:58 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/08 13:18:23 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	fill_list(t_stack **stack_a, char **args)
-// {
-
-// }
+/* void	algrothim(t_stack **stack_a)
+{
+	if (ft_lstsize == 2)
+		// ? see bigger number
+	if (ft_lstsize == 3)
+		// ? see bigger number
+} */
 
 void	init_stack(t_stack **stack_a, char **args)
 {
@@ -37,11 +40,8 @@ void	init_stack(t_stack **stack_a, char **args)
 		if (!*stack_a)
 		{
 			free_2d(args);
-			exit(1);
+			exit_error("Error\nA NULL node appeard");
 		}
 		i++;
 	}
-	for (t_stack *tmp = *stack_a; tmp; tmp = tmp->next)
-		printf("%d\n", tmp->value);
-	free_stack(stack_a);
 }
