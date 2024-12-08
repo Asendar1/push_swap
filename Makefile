@@ -1,4 +1,4 @@
-SRC_FILES = main.c exit_utils.c stack.c stack_utils.c utils.c
+SRC_FILES = main.c exit_utils.c stack.c stack_utils.c utils.c operationes.c rotate.c rrotate.c swap.c
 
 SRC_DIR = sources
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))

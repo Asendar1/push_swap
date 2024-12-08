@@ -6,7 +6,7 @@
 /*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:44:30 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/01 17:57:40 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/08 22:34:55 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ long int	ft_atoi(const char *str)
 		i++;
 	}
 	if (res > INT_MAX || res < INT_MIN)
-		return (-1);
+		return (LONG_MAX);
 	return (res * neg);
 }

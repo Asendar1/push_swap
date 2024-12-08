@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:50:51 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/03 12:19:56 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/08 22:42:18 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ char	**insert_args(int argc, char **argv)
 int	main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
-	// t_stack	*stack_b;
+	t_stack	*stack_b;
 	char	**args;
 
 	stack_a = NULL;
-	// stack_b = NULL;
+	stack_b = NULL;
 	if (argc == 1 || (!argv[1][0] && argc == 2))
 		exit_error("Error\nUsage : ./push_swap [numbers]");
 	if (argc == 2)
@@ -47,6 +47,8 @@ int	main(int argc, char *argv[])
 		args = insert_args(argc, argv);
 	init_stack(&stack_a, args);
 	free_2d(args);
-	algrothim(&stack_a);
+	algrothim(&stack_a, &stack_b);
+	for (t_stack *tmp = stack_a; tmp; tmp = tmp->next)
+		printf("%d\n", tmp->value);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:51:22 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/02 13:46:57 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/08 22:35:37 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,23 @@ void	init_stack(t_stack **stack_a, char **args);
 void	stack_add_bottom(t_stack **stack, t_stack *node);
 void	free_stack(t_stack **stack);
 void	free_2d(char **arr);
-int		ft_atol(char *str);
+void	swap(t_stack **stack);
+void	rotate(t_stack **stack);
+void	r_rotate(t_stack **stack);
+void	push_a(t_stack **stack_a, t_stack **stack_b);
+void	push_b(t_stack **stack_a, t_stack **stack_b);
+void	sa(t_stack **stack_a);
+void	sb(t_stack **stack_b);
+void	ss(t_stack **stack_a, t_stack **stack_b);
+void	ra(t_stack **stack_a);
+void	rb(t_stack **stack_b);
+void	rr(t_stack **stack_a, t_stack **stack_b);
+void	rra(t_stack **stack_a);
+void	rrb(t_stack **stack_b);
+void	rrr(t_stack **stack_a, t_stack **stack_b);
+void	algrothim(t_stack **stack_a, t_stack **stack_b);
+int		ft_stack_size(t_stack **stack);
 int		is_number(char *str);
-t_stack	*new_node(int value);
+t_stack	*new_node(long int value);
 
 #endif

@@ -6,17 +6,17 @@
 /*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 16:39:09 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/01 18:26:07 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/08 22:39:49 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*new_node(int value)
+t_stack	*new_node(long int value)
 {
 	t_stack	*node;
 
-	if (value == -1)
+	if (value == LONG_MAX)
 	{
 		ft_putendl_fd("Error\nInteger overflow", 2);
 		return (NULL);
@@ -42,7 +42,7 @@ void	stack_add_bottom(t_stack **stack, t_stack *node)
 	if (!node)
 	{
 		free_stack(stack);
-		return ;
+		exit (1);
 	}
 	if (!*stack)
 	{
@@ -54,4 +54,19 @@ void	stack_add_bottom(t_stack **stack, t_stack *node)
 		last = last->next;
 	last->next = node;
 	node->prev = last;
+}
+
+int	ft_stack_size(t_stack **stack)
+{
+	t_stack	*tmp;
+	int		size;
+
+	size = 0;
+	tmp = *stack;
+	while (tmp)
+	{
+		size++;
+		tmp = tmp->next;
+	}
+	return (size);
 }
