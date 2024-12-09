@@ -7,7 +7,7 @@ OBJ_DIR = objects
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./libft -Iincludes -g
+CFLAGS =  -I./libft -Iincludes -g
 
 NAME = push_swap
 

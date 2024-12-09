@@ -3,42 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   operationes.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 13:18:34 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/08 21:06:55 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:51:30 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **stack)
+void    swap(t_stack **stack)
 {
-	t_stack	*head;
-	t_stack	*next;
+	t_stack *first;
+	t_stack *second;
 
-	head = *stack;
-	next = (*stack) -> next;
-	head->next = next -> next;
-	head->prev = next;
-	next->prev = NULL;
-	next->next = head;
+	if (!*stack || !(*stack)->next)
+		return;
+	first = *stack;
+	second = (*stack)->next;
+	first->next = second->next;
+	if (second->next)
+		second->next->prev = first;
+	second->next = first;
+	first->prev = second;
+	second->prev = NULL;
+	*stack = second;
 }
 
-void	rotate(t_stack **stack)
+void    rotate(t_stack **stack)
 {
 	t_stack *first;
 	t_stack *last;
 
+	if (!*stack || !(*stack)->next)
+		return;
 	first = *stack;
 	last = *stack;
 	while (last->next)
-		last = last -> next;
-	*stack = first -> next;
-	first -> next = NULL;
-	first -> prev = last;
-	last -> next = first;
-	(*stack) -> prev = NULL;
+		last = last->next;
+	*stack = first->next;
+	(*stack)->prev = NULL;
+	first->next = NULL;
+	first->prev = last;
+	last->next = first;
 }
 
 void	r_rotate(t_stack **stack)

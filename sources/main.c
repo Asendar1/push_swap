@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:50:51 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/08 22:42:18 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:19:34 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ int	main(int argc, char *argv[])
 	algrothim(&stack_a, &stack_b);
 	for (t_stack *tmp = stack_a; tmp; tmp = tmp->next)
 		printf("%d\n", tmp->value);
+	free_stack(&stack_a);
 	return (0);
 }
