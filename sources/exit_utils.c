@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:55:07 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/09 13:39:14 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/17 18:06:50 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,14 @@ void	exit_error(char *error)
 void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
+	t_stack	*next;
 
-	while (*stack)
+	tmp = *stack;
+	while (tmp)
 	{
-		tmp = *stack;
-		*stack = (*stack)->next;
+		next = tmp->next;
 		free(tmp);
+		tmp = next;
 	}
 }
 

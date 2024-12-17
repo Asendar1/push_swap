@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:34:31 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/15 14:28:51 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:31:44 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ static void	short_sort(t_stack **stack_a)
 	}
 	if (ft_stack_size(stack_a) == 3)
 	{
-		if (((*stack_a)->value > (*stack_a)->next->value) && (*stack_a)->value > (*stack_a)->next->next->value)
+		if (((*stack_a)->value > (*stack_a)->next->value)
+			&& (*stack_a)->value > (*stack_a)->next->next->value)
 			ra(stack_a);
 		if ((*stack_a)->next->value > (*stack_a)->next->next->value)
 			rra(stack_a);
@@ -30,69 +31,29 @@ static void	short_sort(t_stack **stack_a)
 	}
 }
 
-int	ft_stack_max(t_stack **stack)
+static void	five_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	int		max;
-	t_stack	*tmp;
+	t_stack	*min;
 
-	max = INT_MIN;
-	tmp = *stack;
-	while (tmp)
+	while (ft_stack_size(stack_a) > 3)
 	{
-		if (tmp->value > max)
-			max = tmp->value;
-		tmp = tmp->next;
+		min = find_min(stack_a);
+		if ((*stack_a)->value == min->value)
+			push_b(stack_a, stack_b);
+		else
+			ra(stack_a);
 	}
-	return (max);
-}
-
-int	ft_stack_min(t_stack **stack)
-{
-	int		min;
-	t_stack	*tmp;
-
-	min = INT_MAX;
-	tmp = *stack;
-	while (tmp)
-	{
-		if (tmp->value < min)
-			min = tmp->value;
-		tmp = tmp->next;
-	}
-	return (min);
-}
-
-void	radix_sort(t_stack **stack_a, t_stack **stack_b)
-{
-	int		i;
-	int		j;
-	int		max;
-	int		min;
-
-	i = 0;
-	max = ft_stack_max(stack_a);
-	min = ft_stack_min(stack_a);
-	while (i < 32)
-	{
-		j = 0;
-		while (j < ft_stack_size(stack_a))
-		{
-			if (((*stack_a)->value >> i) & 1)
-				ra(stack_a);
-			else
-				push_b(stack_a, stack_b);
-			j++;
-		}
-		while (ft_stack_size(stack_b))
-			push_a(stack_a, stack_b);
-		i++;
-	}
+	short_sort(stack_a);
+	push_a(stack_a, stack_b);
+	push_a(stack_a, stack_b);
 }
 
 void	algrothim(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_stack_size(stack_a) <= 3)
 		short_sort(stack_a);
+	if (ft_stack_size(stack_a) <= 5)
+		five_sort(stack_a, stack_b);
 	if (ft_stack_size(stack_a) > 5)
 		radix_sort(stack_a, stack_b);
 }

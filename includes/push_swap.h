@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:51:22 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/09 13:30:29 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/17 18:35:51 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,6 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
-	int				push_cost;
-	bool			above_median;
-	bool			cheapest;
-	struct s_stack	*target_node;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }		t_stack;
@@ -53,8 +49,11 @@ void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 void	algrothim(t_stack **stack_a, t_stack **stack_b);
+void	radix_sort(t_stack **stack_a, t_stack **stack_b);
 int		ft_stack_size(t_stack **stack);
 int		is_number(char *str);
+int		stack_sorted(t_stack **stack);
+t_stack	*find_min(t_stack **stack);
 t_stack	*new_node(long int value);
 
 #endif

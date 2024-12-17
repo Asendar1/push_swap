@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 16:39:09 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/09 13:30:43 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:55:11 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,7 @@ t_stack	*new_node(long int value)
 	if (!node)
 		exit_error("Error\nMalloc failed");
 	node->value = value;
-	node->index = 0;
-	node->push_cost = 0;
-	node->above_median = false;
-	node->cheapest = false;
-	node->target_node = NULL;
+	node->index = -1;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);
@@ -70,4 +66,18 @@ int	ft_stack_size(t_stack **stack)
 		tmp = tmp->next;
 	}
 	return (size);
+}
+
+int	stack_sorted(t_stack **stack_a)
+{
+	t_stack	*tmp;
+
+	tmp = *stack_a;
+	while (tmp -> next)
+	{
+		if (tmp->value > tmp->next->value)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }

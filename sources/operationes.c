@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   operationes.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hassende <hassende@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 13:18:34 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/09 13:51:30 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:30:25 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    swap(t_stack **stack)
+void	swap(t_stack **stack)
 {
-	t_stack *first;
-	t_stack *second;
+	t_stack	*first;
+	t_stack	*second;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	second = (*stack)->next;
 	first->next = second->next;
@@ -30,13 +30,13 @@ void    swap(t_stack **stack)
 	*stack = second;
 }
 
-void    rotate(t_stack **stack)
+void	rotate(t_stack **stack)
 {
-	t_stack *first;
-	t_stack *last;
+	t_stack	*first;
+	t_stack	*last;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	last = *stack;
 	while (last->next)
@@ -50,8 +50,8 @@ void    rotate(t_stack **stack)
 
 void	r_rotate(t_stack **stack)
 {
-	t_stack *second_last;
-	t_stack *last;
+	t_stack	*second_last;
+	t_stack	*last;
 
 	second_last = NULL;
 	last = *stack;
@@ -66,6 +66,7 @@ void	r_rotate(t_stack **stack)
 	(*stack)->prev = last;
 	*stack = last;
 }
+
 void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*first;
@@ -80,6 +81,7 @@ void	push_a(t_stack **stack_a, t_stack **stack_b)
 	if (*stack_a)
 		(*stack_a)->prev = first;
 	*stack_a = first;
+	ft_putendl_fd("pa", 1);
 }
 
 void	push_b(t_stack **stack_a, t_stack **stack_b)
@@ -96,4 +98,5 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 	if (*stack_b)
 		(*stack_b)->prev = first;
 	*stack_b = first;
+	ft_putendl_fd("pb", 1);
 }
