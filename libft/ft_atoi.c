@@ -6,7 +6,7 @@
 /*   By: hassende <hassende@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:44:30 by hassende          #+#    #+#             */
-/*   Updated: 2024/12/08 22:34:55 by hassende         ###   ########.fr       */
+/*   Updated: 2024/12/21 00:01:47 by hassende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ long int	ft_atoi(const char *str)
 		res = (str[i] - '0') + (res * 10);
 		i++;
 	}
-	if (res > INT_MAX || res < INT_MIN)
+	if (res > INT_MAX || res < INT_MIN || ft_strlen(str) > 11)
 		return (LONG_MAX);
 	return (res * neg);
 }
